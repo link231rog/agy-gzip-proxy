@@ -5,8 +5,18 @@
 [![Go](https://img.shields.io/badge/Go-1.21%2B-00ADD8?logo=go&logoColor=white)](https://go.dev/)
 [![Dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Status: Proof of Concept](https://img.shields.io/badge/status-proof--of--concept%20%2F%20use%20at%20own%20risk-orange.svg)]()
 
 </div>
+
+> [!CAUTION]
+> **Terms of Service & Account Risk Warning / 服务条款与封号风险提示**
+>
+> Google's [Antigravity Additional Terms of Service (Section 6)](https://antigravity.google/terms) and [FAQ](https://antigravity.google/docs/faq/) prohibit accessing the service through third-party software, wrappers, or proxies that intercept or alter official client requests/credentials. Routing Antigravity through local reverse proxies has triggered automated `403 PERMISSION_DENIED` (`TOS_VIOLATION`) suspensions (with a strict one-time appeal policy; repeat violations result in permanent loss of Antigravity / Gemini CLI access).
+>
+> **Do not run this proxy against a primary personal Google subscription account (AI Pro / Ultra).** This repository is published purely as a technical proof-of-concept demonstrating that `daily-cloudcode-pa.googleapis.com` natively accepts `Content-Encoding: gzip` request bodies—and why upstream CLI clients should implement request compression natively rather than users deploying local MITM/reverse proxies.
+>
+> **风险提示**：[Google Antigravity 附加服务条款](https://antigravity.google/terms)第 6 条与官方 FAQ 明确限制通过第三方包装器或代理转发 Antigravity 端点；2026 年 11 月已出现本地反代触发 `403 TOS_VIOLATION` 封号案例（且每个账号仅限申诉解封一次）。**请勿在主力个人订阅账号上长期挂用本反代。** 本仓库仅作为“后端原生支持 `Content-Encoding: gzip`、建议官方在客户端内原生开启请求压缩”的技术验证归档。
 
 A lightweight, zero-dependency Go reverse proxy that compresses outbound Google Antigravity CLI (`agy`) request bodies with `Content-Encoding: gzip` via `CLOUD_CODE_URL`, cutting full-context upload traffic by **~64%** without modifying the `agy` binary.
 
