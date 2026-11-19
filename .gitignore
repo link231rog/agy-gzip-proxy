@@ -1,0 +1,8 @@
+# Binaries
+agy-gzip-proxy
+*.exe
+*.out
+
+# Logs & OS files
+*.log
+.DS_Store
